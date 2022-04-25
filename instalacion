@@ -12,12 +12,12 @@ sudo sed -i "s/\#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1024x768/g" /etc/default/grub
 sudo update-grub
 cd resources/config
 cp -pr * $HOME/.config/
-cd ../..
-sudo apt install packages/lsd_0.21.0_amd64.deb
+cd ../
+sudo apt install ./packages/lsd_0.21.0_amd64.deb
 cp -r wallpapers $HOME
 sudo mkdir /usr/share/fonts/nerdfonts
 sudo cp fonts/Hack.zip /usr/share/fonts/nerdfonts
-sudo unzip /usr/share/fonts/nerdfonts/Hack.zip
+sudo unzip /usr/share/fonts/nerdfonts/Hack.zip -d /usr/share/fonts/nerdfonts
 sudo rm -f /usr/share/fonts/nerdfonts/*zip
 sudo fc-cache -fv
 git clone https://github.com/vaxerski/Hypr
