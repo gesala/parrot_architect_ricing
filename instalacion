@@ -6,10 +6,13 @@
 #exit
 
 #=====
+
 sudo apt install xorg git plymouth-themes arctica-greeter-theme-debian-softwaves zsh bat neovim neofetch kitty firefox-esr dunst build-essential rofi fonts-font-awesome xcb cmake gcc libgtk-3-dev ninja-build libgtkmm-3.0-dev libxcb-randr0 libxcb-randr0-dev libxcb-util-dev libxcb-util0-dev libxcb-util1 libxcb-ewmh-dev libxcb-xinerama0 libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-cursor-dev libxcb-shape0-dev feh picom unzip sxiv ranger zsh-autosuggestions zsh-autocomplete zsh-syntax-highlighting
-sudo plymouth-set-default-theme --rebuild-initrd spinfinity
+echo -e "vesafb \n fbcon">>/etc/initramfs-tools/modules
 sudo sed -i "s/\#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1024x768/g" /etc/default/grub
-sudo update-grub
+sudo sed -i "s/quiet\"/quiet\ splash\"/g" /etc/default/grub
+sudo update-grub2
+sudo plymouth-set-default-theme --rebuild-initrd spinfinity
 cd resources/config
 cp -pr * $HOME/.config/
 cd ../
@@ -26,3 +29,4 @@ make clear && make release
 sudo cp ./build/Hypr /usr/bin
 sudo cp ./example/hypr.desktop /usr/share/xsessions
 cd ..
+sudo sed -i "s/default/Hypr/g" /usr/share/xsessions/lightdm-xsession.desktop
