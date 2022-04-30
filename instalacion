@@ -1,7 +1,7 @@
 
 #=====Mode Instalacion==============
 #apt search atheros (ejemplo)
-#apt install network-manager firmware-linux 
+#apt install network-manager firmware-linux git 
 #exit
 #exit
 
@@ -30,3 +30,12 @@ sudo cp ./build/Hypr /usr/bin
 sudo cp ./example/hypr.desktop /usr/share/xsessions
 cd ..
 sudo sed -i "s/default/Hypr/g" /usr/share/xsessions/lightdm-xsession.desktop
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+git clone https://github.com/elkowar/eww
+cd eww
+cargo build --release
+sudo cp target/release/eww /usr/bin/
+sudo chmod +x /usr/bin/eww
+cd ..
+sudo cp resources/scripts/change_wall.sh /usr/bin/
+sudo chmod +x /usr/bin/change_wall.sh
