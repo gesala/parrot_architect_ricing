@@ -31,6 +31,7 @@ sudo cp ./example/hypr.desktop /usr/share/xsessions
 cd ..
 sudo sed -i "s/default/Hypr/g" /usr/share/xsessions/lightdm-xsession.desktop
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
 git clone https://github.com/elkowar/eww
 cd eww
 cargo build --release
