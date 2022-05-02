@@ -1,9 +1,2 @@
 git clone https://github.com/owenrumney/eww-bar
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\n
-source $HOME/.cargo/env
-git clone https://github.com/elkowar/eww\n
-cd eww
-argo build --release
-cd target/release
-mkdir /home/josu/.config/eww
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

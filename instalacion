@@ -1,4 +1,3 @@
-
 #=====Mode Instalacion==============
 #apt search atheros (ejemplo)
 #apt install network-manager firmware-linux git 
@@ -38,5 +37,5 @@ cargo build --release
 sudo cp target/release/eww /usr/bin/
 sudo chmod +x /usr/bin/eww
 cd ..
-sudo cp resources/scripts/change_wall.sh /usr/bin/
+sudo cp scripts/change_wall.sh /usr/bin/
 sudo chmod +x /usr/bin/change_wall.sh
