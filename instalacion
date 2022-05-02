@@ -39,3 +39,15 @@ sudo chmod +x /usr/bin/eww
 cd ..
 sudo cp scripts/change_wall.sh /usr/bin/
 sudo chmod +x /usr/bin/change_wall.sh
+wget https://github.com/EliverLara/candy-icons/archive/refs/heads/master.zip
+sudo unzip master.zip -d /usr/share/icons
+git clone https://github.com/Axarva/dotfiles-2.0
+cd dotfiles-2.0
+sudo mkdir /usr/share/fonts/axarva
+sudo cp fonts/* /usr/share/fonts/axarva/
+sudo fc-cache -fv
+cp -r config/rofi $HOME/.config/
+cp -r config/eww-1920 $HOME/.config/eww
+cp -r config/dunst $HOME/.config/
+sudo cp -r bin/* /bin/
+cd ..
